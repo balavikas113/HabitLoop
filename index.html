@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitLoop - Build Better Habits</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="light-mode">
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-infinity"></i>
+                <h1>HabitLoop</h1>
+            </div>
+            <div class="header-controls">
+                <button id="theme-toggle" class="icon-button">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <section class="motivation-section">
+            <div class="quote-container">
+                <p id="motivation-quote">"The secret of getting ahead is getting started."</p>
+                <p id="quote-author">- Mark Twain</p>
+            </div>
+        </section>
+
+        <section class="progress-overview">
+            <h2>Today's Progress</h2>
+            <div class="progress-rings">
+                <div class="progress-ring">
+                    <canvas id="daily-progress" width="150" height="150"></canvas>
+                    <div class="ring-label">Today</div>
+                </div>
+                <div class="progress-ring">
+                    <canvas id="weekly-progress" width="150" height="150"></canvas>
+                    <div class="ring-label">Week</div>
+                </div>
+                <div class="progress-ring">
+                    <canvas id="streak-progress" width="150" height="150"></canvas>
+                    <div class="ring-label">Streak</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="habits-section">
+            <div class="section-header">
+                <h2>My Habits</h2>
+                <button id="add-habit-btn" class="primary-button">
+                    <i class="fas fa-plus"></i> Add Habit
+                </button>
+            </div>
+            
+            <div id="habits-container" class="habits-container">
+                <!-- Habits will be added here dynamically -->
+            </div>
+        </section>
+
+        <section class="streak-rewards">
+            <h2>Achievements</h2>
+            <div class="badges-container">
+                <div class="badge" data-streak="3">
+                    <i class="fas fa-seedling"></i>
+                    <span>3 Days</span>
+                </div>
+                <div class="badge" data-streak="7">
+                    <i class="fas fa-leaf"></i>
+                    <span>7 Days</span>
+                </div>
+                <div class="badge" data-streak="14">
+                    <i class="fas fa-tree"></i>
+                    <span>14 Days</span>
+                </div>
+                <div class="badge" data-streak="30">
+                    <i class="fas fa-mountain"></i>
+                    <span>30 Days</span>
+                </div>
+                <div class="badge" data-streak="60">
+                    <i class="fas fa-crown"></i>
+                    <span>60 Days</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for adding new habits -->
+    <div id="habit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add New Habit</h2>
+            <form id="new-habit-form">
+                <div class="form-group">
+                    <label for="habit-name">Habit Name</label>
+                    <input type="text" id="habit-name" placeholder="e.g., Drink water" required>
+                </div>
+                <div class="form-group">
+                    <label for="habit-icon">Icon</label>
+                    <select id="habit-icon">
+                        <option value="fa-water">💧 Water</option>
+                        <option value="fa-dumbbell">💪 Exercise</option>
+                        <option value="fa-book">📚 Read</option>
+                        <option value="fa-bed">😴 Sleep</option>
+                        <option value="fa-apple-alt">🍎 Healthy Eating</option>
+                        <option value="fa-meditation">🧘 Meditation</option>
+                        <option value="fa-code">💻 Coding</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="habit-color">Color</label>
+                    <input type="color" id="habit-color" value="#4CAF50">
+                </div>
+                <button type="submit" class="primary-button">Save Habit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

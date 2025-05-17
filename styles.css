@@ -1,0 +1,341 @@
+/* Base Styles & Variables */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --accent-color: #FF9800;
+    --text-color: #333;
+    --text-light: #666;
+    --bg-color: #f9f9f9;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --success-color: #4CAF50;
+    --danger-color: #f44336;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --border-radius: 12px;
+}
+
+.dark-mode {
+    --text-color: #f0f0f0;
+    --text-light: #b0b0b0;
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --border-color: #333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.icon-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Motivation Section */
+.motivation-section {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#motivation-quote {
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+#quote-author {
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+/* Progress Overview */
+.progress-overview {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.progress-overview h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.progress-rings {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.progress-ring {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.ring-label {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Habits Section */
+.habits-section {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.primary-button:hover {
+    background-color: #3d8b40;
+    transform: translateY(-2px);
+}
+
+.habits-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.habit-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+
+.habit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.habit-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.habit-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.habit-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.habit-streak {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.habit-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.habit-check {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.habit-check:hover {
+    border-color: var(--success-color);
+}
+
+.habit-check.completed {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+}
+
+/* Streak Rewards */
+.streak-rewards {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.streak-rewards h2 {
+    margin-bottom: 20px;
+}
+
+.badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.badge {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    border: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+    opacity: 0.5;
+}
+
+.badge.unlocked {
+    opacity: 1;
+    border-color: var(--accent-color);
+    background-color: rgba(255, 152, 0, 0.1);
+}
+
+.badge i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.badge span {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font:100 20px Arial;}
+   
